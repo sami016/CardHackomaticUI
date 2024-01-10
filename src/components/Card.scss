@@ -1,0 +1,38 @@
+
+.card {
+    height: 250px;
+    width: 180px;
+    background-color: slategrey;
+    user-select: none;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    .image {
+        -webkit-user-drag: none;
+        -khtml-user-drag: none;
+        -moz-user-drag: none;
+        -o-user-drag: none;
+        user-drag: none;
+        height: 130px;
+        width: 100%;
+    }
+
+    .description {
+        font-size: 8pt;
+        line-height: 1.1em;
+        padding: 5px;
+        height: 100px;
+        overflow-y: auto;
+    }
+}
+
+.card-inserter {
+    height: 250px;
+    width: 180px;
+    border: dashed 2px #eee;
+    user-select: none;
+    border-radius: 10px;
+    cursor: pointer;
+}

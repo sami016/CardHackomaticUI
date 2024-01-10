@@ -1,0 +1,13 @@
+
+.collection {
+    width: 200px;
+    user-select: none;
+    height: 200px;
+    display: flex;
+    overflow: hidden;
+}
+
+.collection-inserter {
+    cursor: pointer;
+    display: inline-block;
+}
