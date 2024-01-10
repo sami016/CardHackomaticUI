@@ -7,7 +7,7 @@ export const Collection = (props: { collection: ICollection, index: number }) =>
         <div>
             <div className="text-xl font-medium text-black">{props.collection.metadata.name}</div>
             <p className="text-gray-500 text-sm">{props.collection.metadata.description}</p>
-            <span className='text-sm cursor-pointer' onClick={() => window.location.replace(`${window.location.origin}/design/${props.index}`)}>EDIT</span>
+            <span className='text-sm cursor-pointer' onClick={() => window.location.replace(`${window.location.origin}/#/design/${props.index}`)}>EDIT</span>
         </div>
     </div>
 </div>

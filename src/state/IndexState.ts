@@ -29,4 +29,51 @@ export class IndexState {
         );
         console.log('loaded designer store')
     }
+
+    @action.bound
+    public export() {
+        var content = JSON.stringify(this.collections.collections)
+        this.saveStringToFile(content, 'export.json')
+    }
+
+    @action.bound
+    public import() {
+        this.beginImport();
+    }
+
+    saveStringToFile(content: string, filename: string): void {
+        const blob = new Blob([content], { type: "text/plain" });
+        const url = URL.createObjectURL(blob);
+        
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = filename;
+        link.click();
+      }
+
+    beginImport() {
+        var input = document.createElement('input');
+        input.type = 'file';
+
+        input.onchange = ((e: Event) => { 
+            var file = (e?.target as any)?.files?.[0];
+            this.handleSelectedFile(file);
+        });
+
+        input.click();
+    }
+
+    handleSelectedFile(input: string) {
+        var reader = new FileReader();
+        
+        reader.onload = (readerEvent: ProgressEvent<FileReader>) => {
+            var content = readerEvent.target?.result; // this is the content!
+            if (content) {
+                console.log(content);
+                this.collections.import(JSON.parse(content as string));
+            }
+         }
+
+        reader.readAsText(input, 'UTF-8');  // Read as text instead of binary data
+    }
 }

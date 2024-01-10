@@ -1,10 +1,11 @@
 import React from 'react';
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import { DesignCollection } from './components/DesignCollection';
 import { ExploreCollections } from './components/ExploreCollections';
 import { PlayableTable } from './components/PlayableTable';
+import { Settings } from './components/Setings';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     {
         path: '/',
         element: <div>index</div>
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
     {
         path: '/play',
         element: <PlayableTable />
+    },
+    {
+        path: '/settings',
+        element: <Settings />
     }
     // {
         

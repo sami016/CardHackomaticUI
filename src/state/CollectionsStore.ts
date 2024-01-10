@@ -49,6 +49,12 @@ export class CollectionsStore {
         return this.collections?.[index]
     }
 
+    @computed
+    public import(collections: ICollection[]) {
+        this.collections = collections
+        this.persist();
+    }
+
     private persist(): void {
         this.collectionRepository.writeAll(this.collections)
     }
