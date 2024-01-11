@@ -1,7 +1,7 @@
 
 .card {
-    height: 250px;
-    width: 180px;
+    height: 400px;
+    width: 280px;
     background-color: slategrey;
     user-select: none;
     border-radius: 10px;
@@ -15,7 +15,7 @@
         -moz-user-drag: none;
         -o-user-drag: none;
         user-drag: none;
-        height: 130px;
+        height: 250px;
         width: 100%;
     }
 
@@ -29,8 +29,8 @@
 }
 
 .card-inserter {
-    height: 250px;
-    width: 180px;
+    height: 400px;
+    width: 280px;
     border: dashed 2px #eee;
     user-select: none;
     border-radius: 10px;
